@@ -41,7 +41,7 @@ export class PieChartComponent {
             label: 'No of votes',
             data: realdata,
             backgroundColor: colordata,
-            hoverOffset: 4,
+            //hoverOffset: 4,
           },
         ],
       },
