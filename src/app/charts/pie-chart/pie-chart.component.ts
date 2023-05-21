@@ -1,36 +1,19 @@
 import { Component } from '@angular/core';
 import Chart from 'chart.js/auto';
 import { ChartsService } from '../charts.service';
+import { ChartBaseComponent } from '../chart-base/chart-base.component';
 
 @Component({
   selector: 'app-pie-chart',
   templateUrl: './pie-chart.component.html',
   styleUrls: ['./pie-chart.component.css'],
 })
-export class PieChartComponent {
-  public chart: any;
-  private chartInfo: any;
-  private labeldata: any[] = [];
-  private realdata: any[] = [];
-  private colordata: any[] = [];
-  
-  public constructor(private service: ChartsService) {}
-
-  ngOnInit(): void {
-    this.service.GetChartInfo().subscribe((result) => {
-      this.chartInfo = result;
-      if (this.chartInfo != null) {
-        for (let i = 0; i < this.chartInfo.length; i++) {
-          this.labeldata.push(this.chartInfo[i].year);
-          this.realdata.push(this.chartInfo[i].amount);
-          this.colordata.push(this.chartInfo[i].colorcode);
-        }
-        this.createChart(this.labeldata, this.realdata, this.colordata);
-      }
-    });
+export class PieChartComponent extends ChartBaseComponent {
+  public constructor(public override service: ChartsService) {
+    super(service);
   }
 
-  createChart(labeldata: any, realdata: any, colordata: any) {
+  override createChart(labeldata: any, realdata: any, colordata: any) {
     this.chart = new Chart('MyChart', {
       type: 'pie', //this denotes tha type of chart
       data: {
@@ -41,7 +24,7 @@ export class PieChartComponent {
             label: 'No of votes',
             data: realdata,
             backgroundColor: colordata,
-            //hoverOffset: 4,
+            hoverOffset: 4,
           },
         ],
       },

@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import Chart from 'chart.js/auto';
 import { ChartsService } from '../charts.service';
@@ -9,8 +8,7 @@ import { ChartBaseComponent } from '../chart-base/chart-base.component';
   templateUrl: './bar-chart.component.html',
   styleUrls: ['./bar-chart.component.css'],
 })
-export class BarChartComponent extends ChartBaseComponent{
-  
+export class BarChartComponent extends ChartBaseComponent {
   public constructor(public override service: ChartsService) {
     super(service);
   }

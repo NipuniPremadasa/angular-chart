@@ -1,20 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { ChartsService } from '../charts.service';
 import Chart from 'chart.js/auto';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-chart-base',
   templateUrl: './chart-base.component.html',
-  styleUrls: ['./chart-base.component.css']
+  styleUrls: ['./chart-base.component.css'],
 })
-export class ChartBaseComponent implements OnInit{
+export class ChartBaseComponent implements OnInit {
   public chart: any;
   public chartInfo: any;
   public labeldata: any[] = [];
   public realdata: any[] = [];
   public colordata: any[] = [];
-  
+
   constructor(public service: ChartsService) {}
 
   ngOnInit(): void {
@@ -31,6 +30,5 @@ export class ChartBaseComponent implements OnInit{
     });
   }
 
-  createChart(labeldata: any, realdata: any, colordata: any) {
-  }
+  createChart(labeldata: any, realdata: any, colordata: any) {}
 }
