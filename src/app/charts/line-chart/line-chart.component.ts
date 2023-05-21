@@ -17,11 +17,10 @@ export class LineChartComponent extends ChartBaseComponent {
     this.chart = new Chart('MyChart', {
       type: 'line', //this denotes tha type of chart
       data: {
-        // values on X-Axis
         labels: labeldata,
         datasets: [
           {
-            label: 'No of votes',
+            label: 'No of sales',
             data: realdata,
             backgroundColor: colordata,
           },

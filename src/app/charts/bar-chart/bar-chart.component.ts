@@ -9,6 +9,7 @@ import { ChartBaseComponent } from '../chart-base/chart-base.component';
   styleUrls: ['./bar-chart.component.css'],
 })
 export class BarChartComponent extends ChartBaseComponent {
+  
   public constructor(public override service: ChartsService) {
     super(service);
   }
@@ -21,7 +22,7 @@ export class BarChartComponent extends ChartBaseComponent {
         labels: labeldata,
         datasets: [
           {
-            label: 'No of votes',
+            label: 'No of sales',
             data: realdata,
             backgroundColor: colordata,
             barThickness: 40,

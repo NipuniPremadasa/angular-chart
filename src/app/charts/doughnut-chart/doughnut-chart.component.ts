@@ -21,7 +21,7 @@ export class DoughnutChartComponent extends ChartBaseComponent{
         labels: labeldata,
         datasets: [
           {
-            label: "No of votes",
+            label: "No of sales",
             data: realdata,
             backgroundColor: colordata,
           }, 

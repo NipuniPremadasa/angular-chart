@@ -17,11 +17,10 @@ export class PieChartComponent extends ChartBaseComponent {
     this.chart = new Chart('MyChart', {
       type: 'pie', //this denotes tha type of chart
       data: {
-        // values on X-Axis
         labels: labeldata,
         datasets: [
           {
-            label: 'No of votes',
+            label: 'No of sales',
             data: realdata,
             backgroundColor: colordata,
             hoverOffset: 4,

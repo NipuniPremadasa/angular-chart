@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 export class ChartsService {
   constructor(private httpClient: HttpClient) {}
 
-  GetChartInfo() {
+  getChartInfo() {
     return this.httpClient.get('http://localhost:3000/sales');
   }
 }

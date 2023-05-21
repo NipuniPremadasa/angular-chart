@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ChartsService } from '../charts.service';
-import Chart from 'chart.js/auto';
 
 @Component({
   selector: 'app-chart-base',
@@ -9,16 +8,16 @@ import Chart from 'chart.js/auto';
 })
 export class ChartBaseComponent implements OnInit {
   public chart: any;
-  public chartInfo: any;
-  public labeldata: any[] = [];
-  public realdata: any[] = [];
-  public colordata: any[] = [];
+  private chartInfo: any;
+  private labeldata: any[] = [];
+  private realdata: any[] = [];
+  private colordata: any[] = [];
 
   constructor(public service: ChartsService) {}
 
   ngOnInit(): void {
-    this.service.GetChartInfo().subscribe((result) => {
-      this.chartInfo = result;
+    this.service.getChartInfo().subscribe((response) => {
+      this.chartInfo = response;
       if (this.chartInfo != null) {
         for (let i = 0; i < this.chartInfo.length; i++) {
           this.labeldata.push(this.chartInfo[i].year);
